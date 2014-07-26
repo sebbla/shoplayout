@@ -1,0 +1,117 @@
+#cart{
+    @extend .block;
+    @include clearfix;
+    padding: 25px 25px 15px 25px;
+    margin: 0 0 40px 0;
+    article{
+        @include clearfix;
+        border-bottom: 1px dashed lighten($dark, 55%);
+        margin-bottom: 25px;
+        > div.price{ text-align: center; }
+    }
+    header{
+        h2{
+            font-weight: 300;
+            a{ color: lighten($dark,20%); }
+        }
+    }
+    div.summary{
+        margin-bottom: 25px;
+        text-align: right;
+        color: lighten($dark, 20%);
+        font-size: 1.3rem;
+        strong{ 
+            font-size: 1.4rem;
+            color: lighten($dark, 10%);
+        }
+    }
+    footer{
+        a{
+            text-align: center;
+            display: block;
+            padding: 7px 0;
+            width: 200px;
+            span{ margin-right: 10px; }
+        }
+    }
+    .price-container{ @include price-container($orange, top, small, false); }
+    header, figure, article > div { margin-bottom: 15px; }
+    form{ margin-bottom: 25px; }
+    div.short-description{ 
+        font-size: 1.3rem; 
+        color: lighten($dark,25%);
+        display: none;
+    }
+    figure{
+        width: 240px;
+        img{ max-width: 100%; }
+    }
+    form{
+        text-align: center;
+        input[type=number], button{
+            padding: 7px 0;
+            width: 100%;
+        }
+        input[type=number]{
+            color: lighten($dark, 15%);
+            @include box-sizing(border-box);
+            border: 1px solid lighten($dark, 75%);
+        }
+    }
+
+    @include at-breakpoint($break-1){ 
+        @include span-columns(6 omega, $break-1);       
+        header{ @include span-columns(6 omega, $break-1); }
+        figure{ @include span-columns(4 omega, $break-1); }
+        form{ @include span-columns(6 omega, $break-1); }
+        article > div.price{ @include span-columns(6 omega, $break-1); }
+        article > div.short-description{ @include span-columns(6 omega, $break-1); }
+
+    }     
+    @include at-breakpoint($break-2){ 
+        @include span-columns(8 omega, $break-2);     
+        header{ @include span-columns(8 omega, $break-2); }
+        figure{ @include span-columns(8 omega, $break-2); }
+        form{ @include span-columns(8 omega, $break-2); }
+        article > div.price{ @include span-columns(8 omega, $break-2); }
+        article > div.short-description{ @include span-columns(8 omega, $break-2); }        
+    }     
+    @include at-breakpoint($break-3){ 
+        @include span-columns(14 omega, $break-3);     
+        header{ @include span-columns(14 omega, $break-3); }
+        figure{ @include span-columns(4, $break-3); }
+        form{ @include span-columns(14 omega, $break-3); }
+        article > div.price{ 
+            @include span-columns(2 omega, $break-3); 
+            .price-container{ @include price-container($orange, left, small, false); }
+        }
+        article > div.short-description{ 
+            @include span-columns(8, $break-3); 
+            display: block;
+        }
+    }     
+    @include at-breakpoint($break-4){ 
+        @include span-columns(14 omega, $break-4);     
+        header{ @include span-columns(20 omega, $break-4); }
+        figure{ @include span-columns(5, $break-4); }
+        form{ @include span-columns(2 omega, $break-4); }
+        article > div.price{ @include span-columns(2, $break-4); }
+        article > div.short-description{ @include span-columns(11, $break-4); }
+    }     
+    @include at-breakpoint($break-5){ 
+        header{ @include span-columns(4, $break-5); }
+        figure{ @include span-columns(5, $break-5); }
+        form{ @include span-columns(2 omega, $break-5); }
+        article > div.price{ @include span-columns(2, $break-5); }
+        article > div.short-description{ @include span-columns(11, $break-5); }
+    }     
+    @include at-breakpoint($break-6){ 
+        header{ @include span-columns(6, $break-6); }
+        figure{ @include span-columns(3, $break-6); }
+        form{ @include span-columns(3 omega, $break-6); }
+        article > div.price{ @include span-columns(3, $break-6); }
+        article > div.short-description{ @include span-columns(15, $break-6); }
+        .price-container{ @include price-container($orange, left, small, false); }
+    }   
+
+}

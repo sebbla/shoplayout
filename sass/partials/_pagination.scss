@@ -1,0 +1,35 @@
+.pagination{
+    margin-bottom: 25px;
+    text-align: center;
+    ul li{
+        display: inline-block;
+        a{
+            padding: 5px 10px;
+            display: inline-block;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: lighten($dark, 35%);
+            span{ width: 15px; }
+            span.text{ display: none; }
+        }
+        &.selected{
+            @include background(lighten($blue, 15%));
+            a{ color: $white; }
+            @include box-shadow(1px 1px 1px 0px $blue);
+        }
+    }
+
+    @include at-breakpoint($break-1){ }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){
+        ul li a span.text{ 
+            display: block;
+            width: 80px;
+        }
+        ul li a span.icon{ display: none; }
+    }
+    @include at-breakpoint($break-4){ }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ }
+
+}

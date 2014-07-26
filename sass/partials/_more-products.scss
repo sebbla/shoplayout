@@ -1,0 +1,17 @@
+.more-products{
+    @extend .large-product;
+    display: table;
+    padding: 5px;
+    width: 100%;
+    header, p{ text-align: center; }
+    header span{ margin-right: 7px; }
+    a{ 
+        font-size: 1.1rem; 
+        color: lighten($dark, 35%);
+    }
+    .body{
+        vertical-align: middle;
+        display: table-cell;
+        padding: 0;
+    }
+}

@@ -1,0 +1,6 @@
+#main-footer{
+    @include background($black);
+    padding: 5px 0;
+    text-align: center;
+    color: darken($white, 5%);    
+}

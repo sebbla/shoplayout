@@ -1,0 +1,4 @@
+#header-container{
+    @include background(lighten($dark,0%));
+    &.blue{ @include background(lighten($blue,0%));}
+}

@@ -1,0 +1,14 @@
+#promoted-products{
+    @extend #popular-products;
+    margin-top: 25px;
+    color: $blue;
+    > #main-promoted-product{ margin-bottom: 25px; }
+
+    @include at-breakpoint($break-1){ @include span-columns(6 omega, $break-1); } 
+    @include at-breakpoint($break-2){ @include span-columns(8 omega, $break-2); } 
+    @include at-breakpoint($break-3){ @include span-columns(14 omega, $break-3); } 
+    @include at-breakpoint($break-4){ @include span-columns(20 omega, $break-4); } 
+    @include at-breakpoint($break-5){ @include span-columns(24 omega, $break-5); } 
+    @include at-breakpoint($break-6){ @include span-columns(30 omega, $break-6); } 
+
+}

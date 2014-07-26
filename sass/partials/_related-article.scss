@@ -1,0 +1,18 @@
+.related-article{
+    margin-bottom: 25px;
+    border-bottom: 1px dashed lighten($dark, 55%);
+    padding-bottom: 25px;
+    header{
+        margin-bottom: 10px;
+        h3 a{
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: lighten($dark,20%);
+        }
+    }
+    > div{
+        color: lighten($dark,25%);
+        font-size: 1.3rem;
+    }
+}

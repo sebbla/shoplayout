@@ -1,0 +1,122 @@
+$panel-width: 290px;
+
+#cart-panel{
+    @include box-sizing(border-box);
+    @include background($dark);
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 55px;
+    width: $panel-width;
+    z-index: 2;
+    padding: 0 2px;
+    &.visible{ 
+        display: block;
+        top: 55px; 
+    }
+    &.blue{
+        @include background($blue); 
+        > span.arrow{ @include background($blue); } 
+        > footer{
+            a{ @include background($dark);}
+        }
+        > div.total{ @include background($dark); }
+    }
+    > header{
+        padding: 10px 15px;
+        h2{
+            text-transform: uppercase;
+            font-size: 1.3rem;
+            color: $white;
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
+    .body{
+        max-height: 250px;
+        overflow: auto;
+    }
+    > div.total{
+        @include background($blue);
+        @include box-sizing(border-box);
+        padding: 10px 15px;
+        color: $white;
+        strong{
+            font-size: 1.4rem;
+        }
+    }
+    >span.arrow{
+        @include background($dark);
+        @include transform(rotate(45deg));
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        right: 25px;
+        margin-left: -5px;
+        top: 0;
+        margin-top: -5px;
+    }
+    figure{
+        width: 80px;
+        img{ max-width: 100%; }
+    }
+    > footer{
+        padding: 10px 15px;
+        text-align: center;
+        a{ 
+            @include box-shadow(none);
+            padding: 3px 10px;
+            span{
+                margin-right: 10px;
+                font-size: 1.3rem;
+            }
+        }
+    }
+    article{
+        @include background($white);
+        @include clearfix;
+        border-bottom: 1px dashed lighten($dark, 55%);
+        position: relative;
+        padding: 10px 10px;
+        h3 a{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: $white;
+            color: $dark;
+        }
+        figure{ 
+            @include float-left; 
+            margin-right: 15px;
+        }
+        footer{
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            padding: 3px;
+        }
+        .price-container{ @include price-container($orange, left, null, false); }
+        .actions{
+            @include transition-duration($default-transition-duration);
+            color: $white;
+            font-size: 1.1rem;
+            position: absolute;
+            top: 15px;
+            left: -21px;
+            width: 21px;
+            bottom: 0;
+            text-align: center;          
+            a{
+                padding: 5px 0;
+                color: $white;
+                display: block;
+            }
+            a.delete-from-cart{ @include background($red); }
+            a.goto-product{ @include background($green); }
+        }
+        &:hover{ .actions{ left: 0; } }
+        &:last-child{ border-bottom: none; }
+    }
+}

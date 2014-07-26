@@ -1,0 +1,97 @@
+#bottom-panel{
+    padding: 25px 0 30px 0;
+    color: $white;
+    section{
+        margin-bottom: 25px;
+        header{ 
+            margin-bottom: 15px;
+            h2{
+                font-size: 1.4rem;
+                color: darken($white, 10%);
+                text-transform: uppercase;
+            }
+        }
+        ul{
+            li{
+                a{
+                    color: darken($white, 15%);
+                    padding: 3px 0;
+                    display: inline-block;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+        input[type=email]{
+            @include box-sizing(border-box);
+            @include background($black);
+            @include placeholder(1.2rem, darken($white, 10%));
+            border: none;
+            padding: 5px 15px;
+        }
+        button{ 
+            @include box-shadow(none);
+            padding: 5px 0; 
+            display: block;
+            width: 100%;
+        }
+        &.social{
+            a{ 
+                @include background($blue);
+                width: 35px;
+                display: inline-block;
+                margin-bottom: 3px;
+                text-align: center;
+                padding: 8px 0;
+                color: $white;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @include container ($total-columns, $break-1, $break-2, $break-3, $break-4, $break-5, $break-6);
+    @include at-breakpoint($break-1){ 
+        section{ @include span-columns(6 omega, $break-1); }
+    }
+    @include at-breakpoint($break-2){ 
+        section{
+            @include span-columns(8 omega, $break-2); 
+            ul li{ 
+                width: 50%; 
+                &:nth-child(odd){ @include float-left; }
+                &:nth-child(even){ @include float-right; text-align: right; }
+            }
+        }
+    }
+    @include at-breakpoint($break-3){ 
+        section{
+            @include span-columns(7, $break-3); 
+            &:nth-child(2n){ @include omega; }
+            min-height: 100px;
+            &.social{ @include span-columns(14 omega, $break-3); }
+            &:last-child{ margin-bottom: 0; }
+        }
+    }
+    @include at-breakpoint($break-4){ 
+        section{
+            @include span-columns(5, $break-4); 
+            min-height: 100px;
+            ul li{ 
+                width: 100%;                
+                &:nth-child(odd){ @include reset-float; }
+                &:nth-child(even){ @include reset-float; text-align: left; }                
+            }
+            &:nth-child(4n){ @include omega; }
+            &.social{ @include span-columns(20 omega, $break-4); }
+            &:last-child{ margin-bottom: 0; }
+        }
+    }
+    @include at-breakpoint($break-6){ 
+        section{ 
+            &:nth-child(2n){ @include remove-omega; }
+            @include span-columns(6, $break-6); 
+            &:nth-child(5n){ @include omega; }
+            &.social{ @include span-columns(6 omega, $break-6); }
+        }
+    }      
+
+}

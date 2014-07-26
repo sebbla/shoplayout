@@ -1,0 +1,35 @@
+#searcher-panel{
+    height: 35px;
+    &.sticked{ }
+    form{    
+        fieldset{
+            button{
+                @include background($white);
+                position: absolute;
+                right: 5px;
+                top: 8px;
+                color: $blue;
+                border: none;
+            }
+        }
+    }
+
+    @include at-breakpoint($break-1){ }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ }
+    @include at-breakpoint($break-4){
+        form fieldset button{ top: 10px; } 
+        form fieldset input[type=search]{ 
+            border-top: none;
+            border-bottom: none;
+            padding: 12px 10px 12px 10px;
+            line-height: 1.6rem;
+        }
+    }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ 
+        input[type=search]{ }
+        @include pad(5,5);
+    }
+
+}

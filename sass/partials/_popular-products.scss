@@ -1,0 +1,22 @@
+#popular-products{
+    > header{
+        padding: 0 0 20px 0;
+        h2{
+            span{
+                color: $orange;
+                margin-right: 10px;
+            }
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: lighten($dark, 15%);
+        }
+    }
+
+    @include at-breakpoint($break-1){ }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ > header h2 { font-size: 1.9rem; } }
+    @include at-breakpoint($break-4){ }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ }
+
+}

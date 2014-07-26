@@ -1,0 +1,74 @@
+@import "compass";
+@import "susy";
+
+// My Variables:
+$column-width   : 40px;
+$gutter-width   : 10px;
+$grid-padding   : 0;
+
+$break-1        : 6; // for 320px ( 290px  )
+$break-2        : 8; // for 480px ( 440px  )
+$break-3        : 14; // for 800px ( 690px  )
+$break-4        : 20; // for 1024px ( 990px )
+$break-5        : 24; // for 1280px ( 1190px )
+$break-6        : 30; // for 1600px ( 1490px )
+
+@import "partials/_custom-reset";
+@import "partials/_properties";
+@import "partials/_mixins";
+@import "partials/_top-container.scss";
+@import "partials/_slider-container.scss";
+@import "partials/_slider.scss";
+@import "partials/_slider-product.scss";
+@import "partials/_middle-container.scss";
+@import "partials/_top-panel.scss";
+@import "partials/_top-navigation";
+@import "partials/_main-header.scss";
+@import "partials/_cart-panel.scss";
+@import "partials/_classes.scss";
+@import "partials/_middle-panel.scss";
+@import "partials/_header-container.scss";
+@import "partials/_header-panel.scss";
+@import "partials/_popular-products.scss";
+@import "partials/_large-product";
+@import "partials/_searcher-container.scss";
+@import "partials/_searcher-panel.scss";
+@import "partials/_medium-product.scss";
+@import "partials/_more-products.scss";
+@import "partials/_category-products.scss";
+@import "partials/_small-product.scss";
+@import "partials/_product.scss";
+@import "partials/_product-review.scss";
+@import "partials/_product-details.scss";
+@import "partials/_bottom-container.scss";
+@import "partials/_bottom-panel.scss";
+@import "partials/_main-footer.scss";
+@import "partials/_recommended-products.scss";
+@import "partials/_product-images.scss";
+@import "partials/_product-manipulation.scss";
+@import "partials/_about-product.scss";
+@import "partials/_tiny-product.scss";
+@import "partials/_order-navigation.scss";
+@import "partials/_cart.scss";
+@import "partials/_client-informations.scss";
+@import "partials/_order-confirmation.scss";
+@import "partials/_block.scss";
+@import "partials/_article.scss";
+@import "partials/_related-articles.scss";
+@import "partials/_related-article.scss";
+@import "partials/_promoted-products.scss";  
+@import "partials/_selected-category-products.scss";  
+@import "partials/_products-in-category";  
+@import "partials/_pagination.scss";  
+
+html{
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+    font-family: $default-font-family;
+}
+#page{
+    @include background(darken($white, 3%));
+    &.tiny-top-container{
+        margin-top: 80px;
+    }
+}

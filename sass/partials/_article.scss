@@ -1,0 +1,42 @@
+#article{    
+    @extend #product;    
+    margin-bottom: 45px;
+    .body{
+        font-size: 1.3rem;
+        color: lighten($dark,25%);
+        p, table, figure, ul{
+            margin-bottom: 30px;
+        }
+        table{
+            margin: 0 auto 30px auto;
+        }
+        figure{
+            text-align: center;
+            img{ 
+                max-width: 100%; 
+                margin: 0 auto;
+            }
+            figcaption{
+                font-size: 1.2rem;
+                text-align: center;
+                color: lighten($orange,15%);
+                margin-top: 10px;
+                font-style: italic;
+            }
+        }
+        ul li{
+            &:before{
+             content: '-';
+             margin-right: 5px;
+            }
+        }
+        blockquote{
+            font-size: 1.4rem;
+            color: lighten($dark, 50%);
+            margin: 40px 0;
+            span{ color: $orange; }
+            span.left-quote{ margin-right: 10px; }
+            span.right-quote{ margin-left: 10px; }
+        }
+    }
+}

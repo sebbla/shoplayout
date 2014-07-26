@@ -1,0 +1,33 @@
+#main-header{
+    .logo{
+        @include transform(rotate(45deg));
+        @include background($orange);
+        padding: 4px;
+        font-size: 1.1rem;
+        display: inline-block;
+        color: $white;
+        margin-right: 10px;
+    }
+    h1{
+        height: 4rem;
+        color: lighten($dark, 15%);
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 4rem;
+        .sitename{ 
+            display: none; 
+            color: lighten($dark, 15%);
+        }
+    }    
+
+    @include at-breakpoint($break-1){ @include span-columns(1, $break-1); }
+    @include at-breakpoint($break-2){ @include span-columns(2, $break-2); }
+    @include at-breakpoint($break-3){ 
+        @include span-columns(6, $break-3); 
+        h1 .sitename{ display: inline-block; } 
+    }
+    @include at-breakpoint($break-4){ @include span-columns(6, $break-4);  }
+    @include at-breakpoint($break-5){ @include span-columns(7, $break-5);  }
+    @include at-breakpoint($break-6){ @include span-columns(8, $break-6); }
+
+}

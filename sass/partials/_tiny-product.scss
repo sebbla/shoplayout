@@ -1,0 +1,37 @@
+.tiny-product{
+    @extend .large-product;  
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    .price-container{ 
+        @include price-container(lighten($blue,15%), bottom, null, false); 
+        text-align: center;
+        display: block;
+    }
+    .body{
+        text-align: center;
+        padding: 10px 15px 15px 10px;
+        font-size: 1.3rem;
+        color: lighten($dark,25%);
+    }
+    figure img{ @include transform(scale(1)); }
+    header{ 
+        height: 40px; 
+        text-align: center; 
+        h3 a{ font-size: 1.3rem; }
+    }
+    footer{
+        margin-top: 20px;
+        color: lighten($dark,25%);
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+
+    @include at-breakpoint($break-1){ }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ }
+    @include at-breakpoint($break-4){ }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ }
+
+}

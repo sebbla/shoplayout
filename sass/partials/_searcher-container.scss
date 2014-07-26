@@ -1,0 +1,21 @@
+#searcher-container{
+    z-index: 2;
+    &.sticked{ top: 0; }
+
+    @include at-breakpoint($break-1){ 
+        @include span-columns(6 omega, $break-1); 
+        padding: 3px 0 8px 0;
+    }
+    @include at-breakpoint($break-2){ @include span-columns(8 omega, $break-2); }
+    @include at-breakpoint($break-3){ 
+        @include span-columns(14 omega, $break-3);
+        padding: 5px 0 10px 0;
+    }
+    @include at-breakpoint($break-4){ 
+        @include span-columns(8, $break-4);
+        padding: 0;
+    }
+    @include at-breakpoint($break-5){ @include span-columns(10, $break-5); }
+    @include at-breakpoint($break-6){ @include span-columns(14, $break-6); }
+
+}

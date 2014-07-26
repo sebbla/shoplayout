@@ -1,0 +1,11 @@
+#top-container{
+    @include background(darken($white, 0.5%));
+    z-index: 5;
+    position: relative;    
+    &.sticked{
+        @include box-shadow(0 0 4px 0 lighten($dark, 20%));
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}

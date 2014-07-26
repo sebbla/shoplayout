@@ -1,0 +1,64 @@
+.slider-product{
+    position: relative;
+    .about-product{
+        @include background($dark);
+        @include box-sizing(border-box);
+        color: #fff;
+        padding: 15px 0
+    }
+    img{ 
+        max-width: 100%;
+        display: block;
+    }
+    header{
+        h2{
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-align: center;
+            a{ color: $white; }
+        }
+    }
+    p.product-short-info{ 
+        font-size: 1.2rem; 
+        display: none;
+        color: darken($white, 15%);
+    }
+    footer{
+        text-align: center;
+        margin-top: 25px;
+    }
+    .price-container{ @include price-container($orange, top, small, true); }
+
+    @include at-breakpoint($break-1){ }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ 
+        header h2{ 
+            font-size: 1.5rem;
+            text-align: left;
+        }
+        p.product-short-info{ display: block; }
+    }
+    @include at-breakpoint($break-4){ 
+        header h2{ font-size: 1.6rem; }
+        .about-product{
+            @include float-right;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 250px;
+            width: 250px;
+            height: 100%;   
+            padding: 15px 25px 15px 0;
+        }
+        .price-container{ @include price-container($orange, top, large, true); }
+    }
+    @include at-breakpoint($break-5){ header h2{ margin-bottom: 15px; } }
+    @include at-breakpoint($break-6){ 
+        header h2{
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+    }
+
+}

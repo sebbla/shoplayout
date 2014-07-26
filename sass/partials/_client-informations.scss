@@ -1,0 +1,116 @@
+#personal-informations{
+    @extend .block;
+    @include clearfix;    
+    padding: 25px 25px 15px 25px;
+    margin: 0 0 40px 0;
+    color: lighten($dark,20%);
+    footer{
+        a{
+            text-align: center;
+            display: block;
+            padding: 7px 0;
+            width: 200px;
+            span{ margin-right: 10px; }
+        }
+    }
+    h2{
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        padding: 0 0 10px 0;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    h2, .separator p{
+        &:before{
+            content: "--";
+            margin-right: 10px;
+        }
+        &:after{
+            margin-left: 10px;
+            content: "--";
+        }
+    }
+    .separator{
+        text-align: center;
+        display: table;
+        margin: 25px 0;
+        p{ 
+            vertical-align: middle;
+            display: table-cell;
+            font-size: 1.6rem;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+    .user-info-panel{
+        margin-bottom: 25px;        
+    }
+    .login-panel{
+        > div{ 
+            margin: 35px 0 20px 0; 
+            margin: 15px 0 20px 0; 
+            font-size: 1.2rem;
+        }
+        > p{ text-align: center; }
+    }
+
+    @include at-breakpoint($break-1){
+        @include span-columns(6 omega, $break-1);
+        .login-panel{ @include span-columns(6 omega, $break-1); }
+        .separator{ @include span-columns(6 omega, $break-1); }
+        .user-info-panel{ @include span-columns(6 omega, $break-1); }
+    }
+    @include at-breakpoint($break-2){
+        @include span-columns(18 omega, $break-2);
+        .login-panel{ @include span-columns(8 omega, $break-2); }
+        .separator{ @include span-columns(8 omega, $break-2); }
+        .user-info-panel{ @include span-columns(8 omega, $break-2); }
+    }
+    @include at-breakpoint($break-3){
+        @include span-columns(14 omega, $break-3);
+        .login-panel{ @include span-columns(14 omega, $break-3); }
+        .separator{ @include span-columns(14 omega, $break-3); }
+        .user-info-panel{ @include span-columns(14 omega, $break-3); }
+    }
+    @include at-breakpoint($break-4){
+        @include span-columns(20 omega, $break-4);
+        .login-panel{ 
+            @include span-columns(9, $break-4); 
+            > div { margin: 25px 0 20px 0; }
+        }
+        .separator{ 
+            height: 175px;
+            @include span-columns(2, $break-4); 
+        }
+        .user-info-panel{ @include span-columns(9 omega, $break-4); }
+    }
+    @include at-breakpoint($break-5){
+        @include span-columns(24 omega, $break-5);
+        .login-panel{ 
+            @include span-columns(8, $break-5); 
+            @include pad(1,2);
+            > div { margin: 25px 0 20px 0; }
+        }
+        .separator{ 
+            height: 175px;
+            @include span-columns(2, $break-5); 
+        }
+        .user-info-panel{ 
+            @include span-columns(8 omega, $break-5); 
+            @include pad(2,1);
+        }
+    }
+    @include at-breakpoint($break-6){
+        @include span-columns(30 omega, $break-6);
+        .login-panel{ 
+            @include span-columns(8, $break-6); 
+            @include pad(3,3);
+        }
+        .separator{ @include span-columns(2, $break-6); }
+        .user-info-panel{ 
+            @include span-columns(8 omega, $break-6); 
+            @include pad(3,3);
+        }
+    }
+
+}

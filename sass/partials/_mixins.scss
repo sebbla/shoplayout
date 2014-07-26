@@ -1,0 +1,99 @@
+@mixin animation-play-state($state){
+    -webkit-animation-play-state: $state;
+    -moz-animation-play-state:    $state;
+    -o-animation-play-state:      $state;
+    animation-play-state:         $state;
+}
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+@mixin placeholder($size: 1.3rem, $color: lighten($dark, 20%)){
+    &::-webkit-input-placeholder {
+        font-size: $size;
+        color: $color;
+        font-family: $default-font-family;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        font-size: $size;
+        color: $color;
+        font-family: $default-font-family;
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+        font-size: $size;
+        color: $color;
+        font-family: $default-font-family;
+    }
+    &:-ms-input-placeholder {  
+        font-size: $size;
+        color: $color;
+        font-family: $default-font-family;
+    }
+}
+@mixin price-container($color: $orange, $orientation: top, $size: normal, $shadow: true){
+    @include background($color);
+    display: inline-block;    
+    position: relative;
+    color: $white;
+    span.arrow{
+        @include background($color);
+        @include transform(rotate(45deg));
+        position: absolute;
+        display: block;
+        width: 10px;
+        height: 10px;
+        @if( $orientation == top ){
+            left: 50%;
+            margin-left: -5px;
+            top: 0;
+            margin-top: -5px;
+        }@else if( $orientation == left ){
+            left: 0;
+            margin-left: -5px;
+            top: 50%;
+            margin-top: -5px;
+        }@else if( $orientation == bottom ){
+            left: 50%;
+            margin-left: -5px;
+            bottom: 0;
+            margin-bottom: -5px;
+            top: auto;
+        }
+    }
+    @if( $size == large ){
+        font-size: 1.4rem;
+        padding: 8px 15px;
+    }@else{
+        font-size: 1.1rem;
+        padding: 4px 8px;
+    }
+    @if( $shadow == true ){
+        @include box-shadow(3px 2px 0 2px darken($dark,15%));
+    }@else{
+    }
+}

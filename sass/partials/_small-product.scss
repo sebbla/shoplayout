@@ -1,0 +1,41 @@
+.small-product{
+    @extend .large-product;    
+    .price-container{ 
+        @include price-container(lighten($blue,15%), bottom, null, false); 
+        text-align: center;
+        display: block;
+    }
+    .body{
+        text-align: center;
+        padding: 10px 15px 15px 10px;
+        font-size: 1.3rem;
+        clear: both;
+    }
+    header{ 
+        margin: 25px 0 0 0; 
+        height: 40px;
+        text-align: center;
+    }
+    figure{ margin-top: 15px; }
+
+    @include at-breakpoint($break-1){ }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ }
+    @include at-breakpoint($break-4){
+        padding: 9px 8px 7px;
+        margin-bottom: 10px;
+        figure{ @include span-columns(8, $break-4); }
+        header{ 
+            @include span-columns(11 omega, $break-4); 
+            height: 75px;
+        }
+    }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ 
+        padding: 25px 25px;
+        margin-bottom: 10px;
+        figure, header{ width: 100%; }
+        header{ height: 65px; }
+    }
+
+}

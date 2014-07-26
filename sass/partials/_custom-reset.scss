@@ -1,0 +1,28 @@
+body,li,ul,ol,h1,h2,h3,h4,form,fieldset,p,figure,ul,li,section{
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4{
+    font-weight: 400;
+}
+img,
+fieldset,
+input[type=search],
+input[type=button],
+input[type=text],
+input[type=submit]{
+    border: none;
+}
+a{
+    outline: none;
+    text-decoration: none;
+    border: none;
+}
+ul,li{
+    list-style-position: outside;
+    list-style-type: none;
+}
+blockquote{
+    @include box-sizing(border-box);
+    padding: 0 25px;    
+}

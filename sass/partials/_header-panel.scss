@@ -1,0 +1,73 @@
+#header-panel{
+    text-align: center;
+    a.menu-handler{
+        font-size: 2.0rem;
+        color: $white;
+        padding: 5px 0;
+        display: block;
+    }
+    ul{
+        li{
+            @include transition-duration($default-transition-duration);
+            display: inline-block;
+            a{
+                text-align: center;
+                width: 60px;
+                span{
+                    @include transition-duration($default-transition-duration);
+                    display: block;
+                    font-size: 2.4rem;
+                    margin-bottom: 10px;
+                    color: darken($white, 10%);
+                }
+                display: inline-block;
+                padding: 9px 5px;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                color: darken($white, 10%);
+            }
+            &:hover{
+                a { 
+                    span{
+                        color: lighten($orange, 5%);
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    @include container ($total-columns, $break-1, $break-2, $break-3, $break-4, $break-5, $break-6);
+
+    @include at-breakpoint($break-1){ ul{ display: none; } }
+    @include at-breakpoint($break-2){ ul li a { padding: 9px 7px; } }
+    @include at-breakpoint($break-3){ 
+        ul{ 
+            display: block; 
+            li a {
+                padding: 10px 11px;
+                span{ font-size: 2.6rem; }
+            }
+        }
+        a.menu-handler{ display: none; }
+    }
+    @include at-breakpoint($break-4){ 
+        ul li a {
+            padding: 10px 30px;
+            span{ font-size: 2.8rem; }
+        }
+    }
+    @include at-breakpoint($break-5){ 
+        ul li a {
+            padding: 12px 20px;
+            span{ font-size: 3.0rem; }
+        }
+    }
+    @include at-breakpoint($break-5){ 
+        ul li a {
+            padding: 15px;
+            span{ font-size: 3.2rem; }
+        }
+    }
+
+}

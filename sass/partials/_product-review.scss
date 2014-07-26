@@ -1,0 +1,137 @@
+.product-review{
+    @include clearfix;
+    color: lighten($dark,25%);
+    margin-bottom: 80px;
+    border-bottom: 1px dashed lighten($dark, 55%);
+    padding-bottom: 40px;
+    header{
+        text-align: center;
+        margin-bottom: 15px;
+        h3{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+    }
+    .left{
+        span{
+            text-align: center;
+            color: lighten($dark,45%);
+            font-size: 4.9rem;
+            font-weight: 300;
+            display: block;
+        }
+        p{ 
+            padding: 0 0 10px 0;
+            text-align: center;
+            margin-bottom: 20px;            
+            font-style: italic;
+        }
+        a{ 
+            color: lighten($blue,15%);
+            font-size: 1.2rem;
+        }
+    }
+    .center{ font-size: 1.3rem; }
+    .right{
+        margin-bottom: 25px;
+        div{
+            margin-bottom: 25px;
+            ul{
+                padding: 0 45px 0 0;
+                li{
+                    position: relative;
+                    padding: 0 0 10px 25px;
+                    font-size: 1.2rem;
+                    color: darken($white, 65%);
+                    display: block;
+                }
+            }
+            p{
+                text-align: center;
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: lighten($dark,10%);
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                span { 
+                    &:before{
+                        content: "--";
+                        margin-right: 10px;
+                    }
+                }
+                span{ 
+                    &:after{
+                        margin-left: 10px;
+                        content: "--";
+                    }
+                }
+            }
+            &.plus, &.minus{
+                ul li:before{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: 1.4rem;
+                    padding-right: 15px;
+                    font-weight: 700;
+                    line-height: 1.4rem;
+                    display: inline;
+                }
+            }
+            &.plus{ 
+                p{ color: $green; }
+                ul li:before{
+                    content: '+';
+                    color: $green;
+                }
+            }
+            &.minus{ 
+                p{ color: $red; }
+                ul li:before{
+                    content: '-';
+                    color: $red;
+                }
+            }
+        }
+    }
+    .left, .center{ margin-bottom: 25px; }
+    &:last-child{
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+
+    @include at-breakpoint($break-1){ 
+        .left{ @include span-columns(6, $break-1); }        
+        .center{ @include span-columns(6, $break-1); }        
+        .right{ @include span-columns(6 omega, $break-1); }        
+    }
+    @include at-breakpoint($break-2){ 
+        .left{ @include span-columns(8, $break-2); }        
+        .center{ @include span-columns(8, $break-2); }        
+        .right{ @include span-columns(8 omega, $break-2); }        
+    }
+    @include at-breakpoint($break-3){ 
+        .left{ @include span-columns(14, $break-3); }        
+        .center{ @include span-columns(14, $break-3); }        
+        .right{ @include span-columns(14 omega, $break-3); }        
+    }
+    @include at-breakpoint($break-4){ 
+        .left{ @include span-columns(5, $break-4); }        
+        .center{ 
+            @include span-columns(20 omega, $break-4); 
+            margin-top: 10px;
+        }        
+        .right{ @include span-columns(10 omega, $break-4); }        
+    }
+    @include at-breakpoint($break-6){ 
+        .left{ @include span-columns(5, $break-6); }        
+        .center{ 
+            @include span-columns(17, $break-6); 
+            margin-top: 0;
+        }        
+        .right{ @include span-columns(7 omega, $break-6); }        
+    }
+
+}

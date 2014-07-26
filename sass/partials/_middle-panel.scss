@@ -1,0 +1,291 @@
+#middle-panel{
+    .long-panel, .left-short-panel, .right-long-panel, .left-long-panel, .right-short-panel, .left-panel, .right-panel{ }
+    .left-short-panel{ }
+    .long-panel{ }
+    > section{ margin: 20px 0 15px 0; }
+    .wide-block{ 
+        width: 100%; 
+        clear: both;
+    }
+
+    @include container ($total-columns, $break-1, $break-2, $break-3, $break-4, $break-5, $break-6);
+    @include at-breakpoint($break-1){ 
+        .long-panel{ 
+            .tiny-block{
+                @include span-columns(3, $break-1); 
+                &:nth-child(2n){ @include omega; }                
+            }    
+        }
+        .right-short-panel{ 
+            .tiny-block{
+                @include span-columns(3, $break-1);
+                &:nth-child(2n){ @include omega; }
+            }
+        }
+    }
+    @include at-breakpoint($break-2){
+        .long-panel{ .tiny-block{ @include span-columns(4, $break-2); } }    
+        .right-short-panel{ .tiny-block{ @include span-columns(4, $break-2); } }
+    }
+    @include at-breakpoint($break-3){ 
+        .long-panel{
+            @include span-columns(14 omega, $break-3); 
+            .large-block{
+                @include span-columns(7, $break-3); 
+                &:nth-child(2n){ @include omega; }
+            }
+            .tiny-block{
+                @include span-columns(3, $break-3); 
+                height: 200px;
+                &:nth-child(2n){ @include remove-omega; }                      
+                &:nth-child(5n-2){ @include span-columns(2, $break-3); }            
+                &:nth-child(5n){ @include omega; }                            
+            }
+            .small-block{
+                @include span-columns(7, $break-3); 
+                height: 445px;
+                &:nth-child(2n){ @include omega; }
+            }
+        }
+        .left-short-panel, .right-short-panel{ 
+            @include span-columns(14 omega, $break-3); 
+            .medium-block{ @include span-columns(14 omega, $break-3); }
+            .tiny-block{
+                @include span-columns(3, $break-3);
+                height: 216px;
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(4n-1){ @include span-columns(4, $break-3) }
+                &:nth-child(4n-2){ @include span-columns(4, $break-3) }
+                &:nth-child(4n){ @include omega; }
+            }
+        }
+        .right-long-panel, .left-long-panel{ 
+            @include span-columns(14 omega, $break-3); 
+            .small-block{
+                @include span-columns(7, $break-3); 
+                height: 445px;
+                &:nth-child(2n){ @include omega; }
+            }
+        }
+        .left-panel, .right-panel{ 
+            @include span-columns(7, $break-3); 
+            .tiny-block{
+                @include span-columns(4, $break-3); 
+                height: 195px;
+                &:nth-child(3n-1){ @include span-columns(6, $break-3);  }
+                &:nth-child(3n){ @include omega; }
+            }
+        }
+        .right-panel{ @include omega; }
+    }
+    @include at-breakpoint($break-4){ 
+        .long-panel{
+            @include span-columns(20 omega, $break-4); 
+            .large-block{
+                @include span-columns(6, $break-4); 
+                height: 450px;
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(8, $break-4);  }
+                &:nth-child(3n){ @include omega; }
+            }
+            .tiny-block{
+                @include span-columns(4, $break-4); 
+                height: 220px;
+                &:nth-child(2n){ @include remove-omega; }                      
+                &:nth-child(5n-2){ @include span-columns(4, $break-4); }            
+                &:nth-child(5n){ @include omega; }                            
+            }
+            .small-block{
+                @include span-columns(7, $break-4); 
+                height: 230px;
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(6, $break-4);}
+                &:nth-child(3n){ @include omega; }
+            }
+        }
+        .left-short-panel, .right-short-panel{ 
+            @include span-columns(5, $break-4); 
+            .medium-block{ 
+                @include span-columns(20 omega, $break-4); 
+                margin-bottom: 0;
+                height: 482px;
+            }
+            .tiny-block{
+                @include span-columns(10, $break-4);
+                height: auto;
+                &:nth-child(4n-1){ @include span-columns(10, $break-4) }
+                &:nth-child(4n-2){ @include span-columns(10, $break-4) }
+                &:nth-child(2n){ @include omega; }
+                &:nth-child(4n){ @include omega; }
+            }
+        }
+        .right-long-panel, .left-long-panel{ 
+            @include span-columns(15, $break-4); 
+            .small-block{
+                @include span-columns(10, $break-4); 
+                height: auto;
+            }
+        }
+        .left-panel, .right-panel{ 
+            @include span-columns(10, $break-4); 
+            .tiny-block{
+                @include span-columns(7, $break-4); 
+                height: 195px;
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(6, $break-4);  }
+                &:nth-child(3n){ @include omega; }
+            }
+        }
+        .right-panel{ @include omega; }
+        .right-long-panel, .right-short-panel{ @include omega; }
+        .left-long-panel{ .wide-block{ margin-bottom: 10px; } }
+    }
+    @include at-breakpoint($break-5){ 
+        .long-panel{
+            @include span-columns(24 omega, $break-5); 
+            .large-block{
+                @include span-columns(8, $break-5); 
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n){ @include omega; }
+                &:nth-child(3n-1){ @include span-columns(8, $break-5); }
+            }
+            .tiny-block{
+                // Inheriting from $break-4
+                height: 240px;                         
+            }
+            .small-block{
+                @include span-columns(6, $break-5); 
+                height: auto;
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(6, $break-5);}
+                &:nth-child(4n){ @include omega; }
+            }
+        }
+        .left-short-panel, .right-short-panel{ 
+            @include span-columns(6, $break-5); 
+            .medium-block{ 
+                @include span-columns(24 omega, $break-5); 
+                height: 466px;
+            }
+            .tiny-block{
+                @include span-columns(12, $break-5);
+                height: auto;
+                &:nth-child(4n-1){ @include span-columns(12, $break-5) }
+                &:nth-child(4n-2){ @include span-columns(12, $break-5) }
+                &:nth-child(4n){ @include omega; }
+                &:nth-child(2n){ @include omega; }
+            }
+        }
+        .right-long-panel, .left-long-panel{ 
+            @include span-columns(18, $break-5); 
+            .small-block{
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n){ @include omega; }
+                @include span-columns(8, $break-5); 
+                height: 228px;
+            }            
+        }
+        .wide-block{ 
+            @include span-columns(16 omega, $break-5);
+            clear: none;
+            height: 228px;
+        }
+        .left-panel, .right-panel{ 
+            @include span-columns(12, $break-5); 
+            .tiny-block{
+                @include span-columns(8, $break-5); 
+                height: 220px;
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(8, $break-5);  }
+                &:nth-child(3n){ @include omega; }
+            }
+            .wide-block{ 
+                @include span-columns(24 omega, $break-5); 
+                height: auto;
+            }
+
+        }
+        .right-panel{ @include omega; }
+        .right-long-panel, .right-short-panel{ @include omega; }
+        .left-long-panel{ 
+            .wide-block{ margin-bottom: 10px; } 
+            .small-block { 
+                &:nth-child(3n){ @include remove-omega; } 
+                &:nth-child(5){ @include omega; }
+            }
+        }
+    }
+    @include at-breakpoint($break-6){ 
+        .long-panel{
+            @include span-columns(30 omega, $break-6); 
+            .large-block{
+                @include span-columns(10, $break-6); 
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(10, $break-6); }
+                &:nth-child(3n){ @include omega; }
+                height: auto;
+            }
+            .tiny-block{
+                @include span-columns(3, $break-6); 
+                height: 195px;                
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(3, $break-6);  }
+                &:nth-child(5n-2){ @include span-columns(3, $break-6); }            
+                &:nth-child(10n){ @include omega; }               
+            }
+            // Inheriting from $break-5
+            .small-block{}
+        }
+        .left-short-panel, .right-short-panel{ 
+            @include span-columns(8, $break-6); 
+            .medium-block{ @include span-columns(30 omega, $break-6); }
+            .tiny-block{
+                @include span-columns(15, $break-6);
+                height: auto;
+                &:nth-child(4n-1){ @include span-columns(15, $break-6) }
+                &:nth-child(4n-2){ @include span-columns(15, $break-6) }
+                &:nth-child(4n){ @include omega; }
+                &:nth-child(2n){ @include omega; }
+            }
+        }
+        .right-long-panel, .left-long-panel{ 
+            @include span-columns(22, $break-6); 
+            .small-block{                
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n){ @include remove-omega; }
+                @include span-columns(6, $break-6); 
+                height: 466px;
+            }
+        }
+        .left-panel, .right-panel{ 
+            @include span-columns(15, $break-6); 
+            .tiny-block{
+                @include span-columns(6, $break-6); 
+                height: 195px;                
+                &:nth-child(3n){ @include remove-omega; }
+                &:nth-child(2n){ @include remove-omega; }
+                &:nth-child(3n-1){ @include span-columns(6, $break-6);  }
+                &:nth-child(5n){ @include omega; }                
+            }
+            .wide-block{ 
+                @include span-columns(6 omega, $break-6); 
+                height: 195px;
+            }
+        }
+        .wide-block{ 
+            @include span-columns(6 omega, $break-6);
+            height: 466px;
+        }
+        .left-long-panel{ 
+            .wide-block{ margin-bottom: 10px; } 
+            .small-block { &:nth-child(5){ @include remove-omega; } }
+        }       
+        .right-long-panel{ @include span-columns(22 omega, $break-6); }
+        .left-long-panel{ @include span-columns(22, $break-6); }
+        .right-short-panel{ @include span-columns(8 omega, $break-6); }
+        .left-panel{ @include span-columns(15, $break-6); }
+        .right-panel{ @include span-columns(15 omega, $break-6); }
+    }    
+
+}

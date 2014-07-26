@@ -1,0 +1,53 @@
+.product-details{    
+    @extend #popular-products;
+    .body{
+        @extend .block;
+        padding: 25px 25px 15px 25px;
+        position: relative;
+    }
+    ul{
+        li{
+            position: relative;
+            display: inline-block;
+            a{ 
+                display: inline-block;
+                padding: 9px 15px;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                color: lighten($dark,10%);
+            }
+            &.selected{
+                @include background(lighten($blue,15%));
+                a{ color: $white; }
+                span{
+                    @include background(lighten($blue,15%));
+                    @include transform(rotate(45deg));
+                    position: absolute;
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    left: 50%;
+                    margin-left: -5px;
+                    bottom: 0;
+                    margin-bottom: -5px;
+                    top: auto;
+                }
+            }
+        }
+    }
+    section{
+        display: none;
+        padding: 25px 0 15px 0;
+        table{ max-width: 500px; }
+        table{ width: 100%; }
+        &.selected{ display: block; }
+    }
+
+    @include at-breakpoint($break-1){ @include span-columns(6 omega, $break-1); }       
+    @include at-breakpoint($break-2){ @include span-columns(8 omega, $break-2); }       
+    @include at-breakpoint($break-3){ @include span-columns(14 omega, $break-3); }       
+    @include at-breakpoint($break-4){ @include span-columns(20 omega, $break-4); }       
+    @include at-breakpoint($break-5){ @include span-columns(24 omega, $break-5); }       
+    @include at-breakpoint($break-6){ @include span-columns(30 omega, $break-6); }       
+
+}

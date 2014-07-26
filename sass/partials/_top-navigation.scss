@@ -1,0 +1,34 @@
+#top-navigation{
+    text-align: right;
+    li{
+        display: inline-block;
+        position: relative;
+        > a{
+            color: lighten($dark, 15%);
+            line-height: 4rem;
+            padding: 0 20px 0 5px;
+            font-size: 1.1rem;
+            span{
+                @include background($red);
+                position: absolute;
+                color: $white;
+                font-size: 0.9rem;
+                top: 3px;
+                font-weight: 700;
+                right: 0;
+                display: block;
+                line-height: 1.4rem;
+                padding: 0 4px;
+                &.empty-cart{ @include background(lighten($dark, 55%)); }
+            }
+        }
+    }
+
+    @include at-breakpoint($break-1){ @include span-columns(5 omega, $break-1); }
+    @include at-breakpoint($break-2){ @include span-columns(6 omega, $break-2); }
+    @include at-breakpoint($break-3){ @include span-columns(8 omega, $break-3); }
+    @include at-breakpoint($break-4){ @include span-columns(6 omega, $break-4); }
+    @include at-breakpoint($break-5){ @include span-columns(7 omega, $break-5); }
+    @include at-breakpoint($break-6){ @include span-columns(8 omega, $break-6); }
+
+}
