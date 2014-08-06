@@ -1,4 +1,12 @@
 #header-container{
     @include background(lighten($dark,0%));
     &.blue{ @include background(lighten($blue,0%));}
+
+    @include at-breakpoint($break-1){ margin-top: 85px; }
+    @include at-breakpoint($break-2){ }
+    @include at-breakpoint($break-3){ margin-top: 90px; }
+    @include at-breakpoint($break-4){ margin-top: 40px; }
+    @include at-breakpoint($break-5){ }
+    @include at-breakpoint($break-6){ }
+
 }

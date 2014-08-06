@@ -24,21 +24,4 @@ $(document).ready(function() {
         $(this).siblings('ul').slideToggle(300);
     });
 
-
-    // Scrolling
-    $(window).scroll(function() {
-        positionTopPanel();
-    });
-
-    function positionTopPanel() {
-        var scrolledTop = $(window).scrollTop();
-        if (scrolledTop > 20) {
-            $('#top-container, #searcher-container, #searcher-panel').addClass('sticked');
-        } else {
-            $('#top-container, #searcher-container, #searcher-panel').removeClass('sticked');
-        }
-    }
-
-    positionTopPanel();
-
 });

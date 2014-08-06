@@ -1,6 +1,5 @@
 #searcher-container{
     z-index: 2;
-    &.sticked{ top: 0; }
 
     @include at-breakpoint($break-1){ 
         @include span-columns(6 omega, $break-1); 
